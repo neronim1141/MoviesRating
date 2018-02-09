@@ -8,5 +8,5 @@ Kolejnosc uruchamiania
 4. uruchomic klienta w folderze client wywolac komende ng serve
 
 dodatkowe informacje
-  na serwerze jest ustawiony domyslny reset bazy (mozna to zmienic w pliku nodemon.js
+  na serwerze jest ustawiony domyslny reset bazy (mozna to zmienic w pliku nodemon.json)
   
