@@ -80,6 +80,7 @@ MovieSchema.virtual('preview').get(function() {
     _id: this._id,
     title: this.title,
     userId: this.userId,
+    description: this.description,
     likesCount: this.likesCount,
     ratingAvg: this.ratingSum / this.ratingCount
   };
