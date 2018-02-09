@@ -7,8 +7,6 @@
 var express = require('express');
 var morgan = require('morgan');
 var bodyParser = require('body-parser');
-// var methodOverride = require('method-override');
-// var errorHandler = require('errorhandler');
 var path = require('path');
 var config = require('./environment');
 var passport = require('passport');
@@ -25,7 +23,6 @@ module.exports = function(app) {
   app.use(bodyParser.json());
   app.use(cors());
   app.use(passport.initialize());
-  require('./passport')(passport);
 
   app.set('appPath', config.root);
 
