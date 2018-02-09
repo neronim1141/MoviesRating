@@ -1,0 +1,5 @@
+<button mat-raised-button *ngIf="!logged" routerLink="/login">
+  {{'MENU.LOGIN' | translate}}</button>
+<button mat-raised-button *ngIf="!logged" routerLink="/register">{{'MENU.REGISTER' | translate}}</button>
+<button mat-raised-button *ngIf="logged" routerLink="/movie/add">{{'MENU.ADDMOVIE' | translate}}</button>
+<button mat-raised-button *ngIf="logged" routerLink="/profile">{{'MENU.LOGOUT' | translate}}</button>

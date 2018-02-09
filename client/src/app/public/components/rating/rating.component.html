@@ -1,0 +1,8 @@
+{{'MOVIE.RATING'|translate}}:
+<br /> {{avg}}
+<mat-icon color="warn" *ngIf="avg && avg<5">thumb_down
+</mat-icon>
+<mat-icon color="accent" *ngIf=" avg && avg>5">thumb_up
+</mat-icon>
+<mat-icon *ngIf="!avg || avg==5 ">remove
+</mat-icon>

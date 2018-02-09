@@ -1,0 +1,29 @@
+mat-card>mat-toolbar {
+    //fix for toolbar in mat-card
+    margin: -24px 0 24px -24px!important;
+    width: calc(100% + 48px)!important;
+}
+
+mat-card>mat-card-header>mat-toolbar {
+    //fix for toolbar in mat-card
+    margin: -24px 0 24px -24px!important;
+    width: calc(100% + 48px)!important;
+}
+
+@media screen and (max-width:600px) {
+    mat-card>mat-toolbar {
+        //fix for toolbar in mat-card
+        margin: -24px 0 24px -16px!important;
+        width: calc(100% + 32px)!important;
+    }
+    mat-card>mat-card-header>mat-toolbar {
+        //fix for toolbar in mat-card
+        margin: -24px 0 24px -16px!important;
+        width: calc(100% + 32px)!important;
+    }
+}
+
+.mat-sidenav {
+    background: white!important;
+    color: black!important;
+}

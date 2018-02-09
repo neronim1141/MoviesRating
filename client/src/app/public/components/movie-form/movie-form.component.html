@@ -1,0 +1,50 @@
+<form [formGroup]="movie">
+
+  <mat-card>
+    <mat-toolbar color="accent">
+      <h1>
+        <mat-form-field color="accent" floatLabel="never" class="title">
+          <input matInput placeholder="{{'MOVIE.TITLE'|translate}}" value="{{MovieInput?.title}}" formControlName="title">
+        </mat-form-field>
+      </h1>
+      <div class="flex-spacer">
+
+      </div>
+      <mat-form-field floatLabel="never">
+        <input matInput color="accent" [matDatepicker]="picker" placeholder="{{'MOVIE.PREMIERE'|translate}}" value="{{MovieInput?.premiere}}"
+          formControlName="premiere">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </mat-toolbar>
+    <mat-card-content fxLayout="column">
+      <mat-tab-group>
+        <mat-tab label="{{'MOVIE.INFO'|translate}}">
+          <mat-form-field>
+            <textarea matInput placeholder="{{'MOVIE.INFO'|translate}}" value="{{MovieInput?.description}}" formControlName="description"></textarea>
+          </mat-form-field>
+        </mat-tab>
+
+      </mat-tab-group>
+      <div class="flex-spacer"></div>
+
+
+      <mat-form-field>
+        <mat-chip-list #chipList>
+          <mat-chip *ngFor="let category of categories" [selectable]="selectable" [removable]="removable" (remove)="remove(category)">
+            {{category}}
+            <mat-icon matChipRemove *ngIf="removable">cancel</mat-icon>
+          </mat-chip>
+          <input placeholder="  {{'MOVIE.CATEGORY'|translate}}:" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+            [matChipInputAddOnBlur]="addOnBlur" (matChipInputTokenEnd)="add($event)" />
+        </mat-chip-list>
+      </mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      <button mat-raised-button (click)="addMovie( this.movie.value)">
+        {{'SAVE'|translate}}
+      </button>
+    </mat-card-actions>
+
+  </mat-card>
+</form>

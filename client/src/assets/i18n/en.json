@@ -1,0 +1,72 @@
+{
+  "AUTH": {
+    "LOG": {
+      "TITLE": "Log Im",
+      "IN": "Log In",
+
+      "PLACEHOLDER": {
+        "LOGIN": "Login",
+        "PASSWORD": "Password"
+      }
+    },
+    "REGISTER": {
+      "TITLE": "Register",
+      "SIGNIN": "Sign In",
+      "ERROR": "Fill the form correctly",
+      "PLACEHOLDER": {
+        "LOGIN": "Login",
+        "EMAIL": "Email",
+        "PASSWORD": "Password",
+        "REPEAT": "Repeat Password"
+      }
+    }
+  },
+  "ERRORS": {
+    "FORBIDDEN": "Forbiddedn",
+    "404": "Not Found",
+    "HOME": "Home Page",
+    "BACK": "Go back"
+  },
+
+  "MOVIE": {
+    "ADDEDBY": "Added By ",
+    "DATE": "Date",
+    "TITLE": "Title",
+    "SUBTITLE": "Subtitle",
+    "PREMIERE": "Premiere",
+    "INFO": "Information",
+    "DESC": "Description",
+    "RATE": "Rate",
+    "RATING": "Rating",
+    "CATEGORY": "Categories",
+    "CATEGORY.NONE": "None",
+    "FAVORITE": "Liked",
+    "ACTORS": "Actors",
+    "REVIEW": "Reviews",
+    "RATINGS": "Ratings",
+    "ADDRATING": "Add rating",
+    "ADDREVIEW": "Add review"
+  },
+  "REVIEW": "Review",
+  "RATING": {
+    "RATING": "Rating",
+    "MUSIC": "Music",
+    "VIEWS": "Views",
+    "ACTORS": "Acting"
+  },
+  "MENU": {
+    "LOGIN": "log In",
+    "REGISTER": "Register",
+    "ADDMOVIE": "Add film",
+    "LOGOUT": "Log Out"
+  },
+  "DESC": "Description",
+
+  "LANGUAGE": "Languages",
+  "CANCEL": "Cancel",
+  "SAVE": "Save",
+  "EDIT": "Edit",
+  "REMOVE": "Remove",
+  "NONE": "None",
+  "LIST": "Movie List"
+}

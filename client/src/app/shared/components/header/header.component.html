@@ -1,0 +1,10 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="openSidenav.emit($event)">
+    <mat-icon>menu</mat-icon>
+  </button>
+
+  <div class="flex-spacer"></div>
+  <button mat-button routerLink=''>STRONA O FILMACH</button>
+  <div class="flex-spacer"></div>
+  <language-selector (select)="selectLanguage.emit($event)" [selectedLanguage]="selectedLanguage" [availableLanguages]="availableLanguages">></language-selector>
+</mat-toolbar>

@@ -1,0 +1,6 @@
+ {{'MOVIE.FAVORITE'|translate}}:
+<br /> {{ count}}
+<button mat-icon-button *ngIf="logged" (click)="like.emit()">
+  <mat-icon [ngClass]="{'mat-warn': isLiked}">favorite
+  </mat-icon>
+</button>

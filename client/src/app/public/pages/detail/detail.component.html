@@ -1,0 +1,3 @@
+<app-movie-detail [Movie]="sandbox.movie$ |async" [User]="sandbox.loggedUser" (like)="sandbox.like($event)" [likes]="sandbox.likes$ |async"
+  (like)="sandbox.like($event)" (remove)="sandbox.remove($event)" (addRating)="addRating($event)" (editRating)="editRating($event)"
+  (removeRating)="sandbox.removeRating($event)" (addReview)="addReview($event)" (editReview)="editReview($event)" (removeReview)="sandbox.removeReview($event)"></app-movie-detail>

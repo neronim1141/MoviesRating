@@ -1,0 +1,47 @@
+<mat-card *ngFor="let review of list">
+
+  <mat-card-subtitle>
+    Autor:{{review.userId.login}}
+    <div *ngIf="author(review.userId._id)">
+      <button mat-raised-button (click)="editReview.emit(review)">
+        {{'EDIT'|translate}}
+      </button>
+      <button mat-raised-button (click)="removeReview.emit(review)">
+        {{'REMOVE'|translate}}
+      </button>
+    </div>
+  </mat-card-subtitle>
+  <mat-card-content fxLayout="row wrap">
+    <div fxFlex="150px">
+      {{'RATING.RATING'|translate}}:
+      <div fxLaytout="row">
+        <mat-icon *ngRepeat="this.Math.floor((review.rating/2))">star</mat-icon>
+        <mat-icon *ngIf="(review.rating%2)==1">star_half</mat-icon>
+      </div>
+      {{'RATING.MUSIC'|translate}}:
+      <div fxLaytout="row">
+        <mat-icon *ngRepeat="this.Math.floor((review.musicRating/2))">star</mat-icon>
+        <mat-icon *ngIf="(review.musicRating%2)==1">star_half</mat-icon>
+      </div>
+      {{'RATING.VIEWS'|translate}}:
+      <div fxLaytout="row">
+        <mat-icon *ngRepeat="this.Math.floor((review.viewRating/2))">star</mat-icon>
+        <mat-icon *ngIf="(review.viewRating%2)==1">star_half</mat-icon>
+      </div>
+      {{'RATING.ACTORS'|translate}}:
+      <div fxLaytout="row">
+        <mat-icon *ngRepeat="this.Math.floor((review.actorsRating/2))">star</mat-icon>
+        <mat-icon *ngIf="(review.actorsRating%2)==1">star_half</mat-icon>
+      </div>
+    </div>
+    <div>
+      {{'REVIEW'|translate}}:
+      <br /> {{review.description}}</div>
+  </mat-card-content>
+
+</mat-card>
+<mat-card *ngIf="!list || list.length<=0">
+  <mat-card-content fxLayoutAlign="space-around center">
+    <div>{{'NONE'|translate}}</div>
+  </mat-card-content>
+</mat-card>

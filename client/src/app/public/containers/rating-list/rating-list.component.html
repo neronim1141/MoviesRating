@@ -1,0 +1,29 @@
+<mat-card *ngFor="let rating of list">
+  <mat-card-title>
+    <div fxLaytout="row">
+      <mat-icon *ngRepeat="this.Math.floor((rating.rating/2))">star</mat-icon>
+      <mat-icon *ngIf="(rating.rating%2)==1">star_half</mat-icon>
+    </div>
+  </mat-card-title>
+  <mat-card-subtitle>
+    Autor:{{rating.userId.login}}
+  </mat-card-subtitle>
+  <mat-card-content *ngIf="rating.description">
+    {{'DESC'|translate}}:
+    <br /> {{rating.description}}
+  </mat-card-content>
+  <mat-card-actions *ngIf="author(rating.userId._id)">
+    <button mat-raised-button (click)="editRating.emit(rating)">
+      {{'EDIT'|translate}}
+    </button>
+    <button mat-raised-button (click)="removeRating.emit(rating)">
+      {{'REMOVE'|translate}}
+    </button>
+  </mat-card-actions>
+
+</mat-card>
+<mat-card *ngIf="!list || list.length<=0">
+  <mat-card-content fxLayoutAlign="space-around center">
+    <div>{{'NONE'|translate}}</div>
+  </mat-card-content>
+</mat-card>

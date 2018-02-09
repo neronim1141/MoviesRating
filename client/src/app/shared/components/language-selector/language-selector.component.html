@@ -1,0 +1,7 @@
+<mat-select [(value)]="lang" [compareWith]="compareByCode" [style.width]="'70px'" color="primary" class="language-select">
+  <mat-select-trigger>
+    <img src="{{'/assets/flags/'+lang.culture +'.png'}}" [alt]="lang.name"> {{ lang.name }}</mat-select-trigger>
+  <mat-option *ngFor="let lang of availableLanguages " [value]="lang" (click)="select.emit(lang)">
+    <img src="{{'/assets/flags/'+lang.culture +'.png'}}" [alt]="lang.name"> {{ lang.name }}
+  </mat-option>
+</mat-select>

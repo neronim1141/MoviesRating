@@ -1,0 +1,42 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/theming';
+// Plus imports for other components in your app.
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+// Define the palettes for your theme using the Material Design palettes available in palette.scss
+// (imported above). For each palette, you can optionally specify a default, lighter, and darker
+// hue.
+$app-primary: mat-palette($mat-grey, 900);
+$app-accent: mat-palette($mat-amber);
+// The warn palette is optional (defaults to red).
+$app-warn: mat-palette($mat-red);
+// Create the theme object (a Sass map containing all of the palettes).
+$app-theme: mat-dark-theme($app-primary, $app-accent, $app-warn);
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-theme($app-theme);
+// Define an alternate dark theme.
+$cards-primary: mat-palette($mat-amber);
+$cards-accent: mat-palette($mat-teal);
+$cards-warn: mat-palette($mat-deep-orange);
+$cards-theme: mat-light-theme($cards-primary, $cards-accent, $cards-warn);
+@include mat-card-theme($cards-theme);
+@include mat-dialog-theme($cards-theme);
+@include mat-slider-theme($cards-theme);
+@include mat-tabs-theme($cards-theme);
+$buttons-primary: mat-palette($mat-amber);
+$buttons-accent: mat-palette($mat-teal, 600);
+$buttons-warn: mat-palette($mat-deep-orange, 700);
+$buttons-theme: mat-light-theme($buttons-primary, $buttons-accent, $buttons-warn);
+@include mat-button-theme($buttons-theme);
+@include mat-icon-theme($buttons-theme);
+$inputs-primary: mat-palette($mat-amber);
+$inputs-accent: mat-palette($mat-teal);
+$inputs-warn: mat-palette($mat-red);
+$inputs-theme: mat-light-theme($inputs-primary, $inputs-accent, $inputs-warn);
+@include mat-form-field-theme($inputs-theme);

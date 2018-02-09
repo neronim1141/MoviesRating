@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-toolbar color="accent">
+    <h1> {{Movie?.title}}</h1>
+  </mat-toolbar>
+
+  <a routerLink="movie/{{Movie?._id}}">
+    <mat-card-content>
+
+      <b>{{'MOVIE.DESC'|translate}}:</b>
+
+      <br /> {{ Movie.description | truncate : 128 : false : "...czytaj wiecej" }} {{isLiked}}
+
+
+
+    </mat-card-content>
+  </a>
+
+  <mat-card-actions fxLayout="row" fxLayoutAlign="space-between">
+
+    <app-like [logged]="logged" [count]="Movie?.likesCount" [isLiked]="isLiked" (like)="like.emit(Movie?._id)"></app-like>
+    <app-rating [avg]="Movie?.ratingAvg"></app-rating>
+
+  </mat-card-actions>
+</mat-card>

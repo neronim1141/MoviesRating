@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>{{'REVIEW'|translate}}</h1>
+<div mat-dialog-content fxLayout="column">
+  <p>{{'RATING.RATING'|translate}}</p>
+  <mat-slider [tick-interval]="auto" [thumb-label]="true" [step]="1" [max]="10" [min]="1" [(ngModel)]="data.rating"></mat-slider>
+  <mat-form-field>
+    <textarea matInput placeholder="{{'DESC'|translate}}" [(ngModel)]="data.description"></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions fxLayoutAlign="space-around center">
+  <button mat-button (click)="onNoClick()">{{'CANCEL'|translate}}</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>{{'SAVE'|translate}}</button>
+</div>

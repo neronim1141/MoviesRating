@@ -1,0 +1,5 @@
+@import '~@angular/material/theming';
+.language-select {
+    color: white !important;
+    @include mat-typography-level-to-styles(mat-typography-config( $font-family: 'Roboto, "Helvetica Neue", sans-serif', $title: mat-typography-level(16px, 16px, 100)), title);
+}

@@ -1,0 +1,23 @@
+{
+  "api": {
+    "baseUrl": "/api"
+  },
+
+  "localization": {
+    "languages": [
+      {
+        "code": "pl",
+        "name": "PL",
+        "culture": "pl-PL"
+      },
+      {
+        "code": "en",
+        "name": "EN",
+        "culture": "en-EN"
+      }
+    ],
+    "defaultLanguage": "pl"
+  },
+
+  "debugging": false
+}

@@ -1,0 +1,65 @@
+<mat-card>
+  <mat-toolbar color="accent">
+    <h1> {{Movie?.title}}</h1>
+    <div class="flex-spacer">
+
+    </div>
+    {{'MOVIE.PREMIERE'|translate}}:{{Movie?.premiere | date:'yyyy-MM-dd' :'+0100'}}
+    <button mat-icon-button [matMenuTriggerFor]="menu" color="accent" *ngIf="author()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+
+      <button mat-menu-item routerLink="/movie/update/{{Movie?._id}}">{{'EDIT'|translate}}</button>
+
+      <button mat-menu-item (click)="remove.emit(Movie?._id)">{{'REMOVE'|translate}}</button>
+
+
+    </mat-menu>
+  </mat-toolbar>
+
+  <mat-card-content fxLayout="column">
+    <div fxLayout="row">
+      <mat-card-subtitle>
+
+        {{'MOVIE.ADDEDBY'|translate}}: {{ Movie?.userId?.login }}
+        <br/> {{'MOVIE.DATE'|translate}}:{{ Movie?.creationTime | date:'yyyy-MM-dd HH:mm' :'+0100'}}
+
+      </mat-card-subtitle>
+      <div class="flex-spacer"></div>
+      <div *ngIf="User">
+        <button mat-raised-button (click)="addReview.emit(Movie?._id)"> {{'MOVIE.ADDREVIEW'|translate}}</button>
+        <button mat-raised-button (click)="addRating.emit(Movie?._id)">{{'MOVIE.ADDRATING'|translate}}</button>
+      </div>
+    </div>
+    <mat-tab-group [selectedIndex]="0">
+      <mat-tab label="{{'MOVIE.INFO'|translate}}">
+        <div *ngIf="Movie?.categories?.length; else elseBlock">
+          {{'MOVIE.CATEGORY'|translate}}:
+          <mat-chip-list>
+            <mat-chip *ngFor="let category of Movie.categories">{{category}}</mat-chip>
+
+          </mat-chip-list>
+        </div>
+        <ng-template #elseBlock>
+          <mat-chip-list>
+            <mat-chip> {{'MOVIE.CATEGORY.NONE'|translate}}</mat-chip>
+
+          </mat-chip-list>
+        </ng-template>
+        <br /> {{ Movie?.description }}</mat-tab>
+      <mat-tab label="{{'MOVIE.REVIEW'|translate}}">
+        <app-review-list [list]="Movie?.reviews" [User]="User" (editReview)="editReview.emit($event)" (removeReview)="removeReview.emit($event)"></app-review-list>
+      </mat-tab>
+      <mat-tab label="{{'MOVIE.RATINGS'|translate}}">
+        <app-rating-list [list]="Movie?.ratings" [User]="User" (editRating)="editRating.emit($event)" (removeRating)="removeRating.emit($event)"></app-rating-list>
+      </mat-tab>
+    </mat-tab-group>
+
+  </mat-card-content>
+  <mat-card-actions fxLayout="row" fxLayoutAlign="space-between">
+    <app-like [logged]="!!User" [count]="Movie?.likesCount" [isLiked]="isLiked()" (like)="like.emit(Movie?._id)"></app-like>
+    <app-rating [avg]="Movie?.ratingAvg"></app-rating>
+
+  </mat-card-actions>
+</mat-card>

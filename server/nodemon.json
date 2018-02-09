@@ -1,0 +1,9 @@
+{
+  "env": {
+    "NODE_ENV": "development",
+    "IP": "localhost",
+    "PORT": "3000",
+    "MONGODB_DB_URL": "mongodb://localhost/movies",
+    "PUPULATE_DB": "true"
+  }
+}

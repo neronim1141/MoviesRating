@@ -1,0 +1,10 @@
+<mat-card>
+  <mat-toolbar>
+    {{'LIST'|translate}}:
+  </mat-toolbar>
+  <app-movies-list [list]="sandbox.movies$ |async" (changePage)="sandbox.changePage($event)" (like)="sandbox.like($event)"
+    [size]="sandbox.moviesSize$ |async" [page]="sandbox.moviesPage$ |async" [userLogged]="sandbox.logged" [userLikes]="sandbox.likes$ |async"
+    [pageSize]="sandbox.moviesPageSize$ |async">
+
+  </app-movies-list>
+</mat-card>

@@ -1,0 +1,15 @@
+textarea {
+    min-height: 250px;
+}
+
+mat-form-field {
+    width: 100%;
+}
+
+mat-toolbar mat-form-field {
+    width: 25%;
+}
+
+.title {
+    width: 100%!important;
+}

@@ -1,0 +1,16 @@
+<mat-sidenav-container fullscreen>
+  <mat-sidenav class="sidenav" #sidenav mode="push" [opened]="sandbox.$showSidenav | async" [ngClass.gt-md]="{'sidenav-desktop':true}"
+    [ngClass.lt-lg]="{'sidenav-mobile':true}" [fixedInViewport]="true" (openedChange)="sandbox.toggleSidenav($event)">
+    <app-navigation [logged]="sandbox.logged$ |async" (logout)="sandbox.logout()"></app-navigation>
+
+  </mat-sidenav>
+
+  <app-header (selectLanguage)="sandbox.selectLanguage($event)" (openSidenav)="sidenav.toggle()" [selectedLanguage]="sandbox.$selectedLang | async"
+    [availableLanguages]="sandbox.$availableLanguages | async">
+
+  </app-header>
+
+  <ng-content></ng-content>
+
+
+</mat-sidenav-container>

@@ -1,0 +1,72 @@
+{
+  "AUTH": {
+    "LOG": {
+      "TITLE": "Logowanie",
+      "IN": "zaloguj",
+
+      "PLACEHOLDER": {
+        "LOGIN": "nazwa uzytkownika",
+        "PASSWORD": "Hasło"
+      }
+    },
+    "REGISTER": {
+      "TITLE": "Rejestracja",
+      "SIGNIN": "Zarejerstruj",
+      "ERROR": "Wypełnij poprawnie formularz",
+      "PLACEHOLDER": {
+        "LOGIN": "Login",
+        "EMAIL": "Email",
+        "PASSWORD": "Hasło",
+        "REPEAT": "Powtórz Hasło"
+      }
+    }
+  },
+  "ERRORS": {
+    "FORBIDDEN": "Brak Dostepu",
+    "404": "Nie Znaleziono",
+    "HOME": "Strona Główna",
+    "BACK": "Cofnij"
+  },
+
+  "MOVIE": {
+    "ADDEDBY": "Dodano przez ",
+    "DATE": "Data",
+    "TITLE": "Tytuł",
+    "SUBTITLE": "Podtytuł",
+    "PREMIERE": "Premiera",
+    "INFO": "Informacje",
+    "DESC": "Opis",
+    "RATE": "Oceń",
+    "RATING": "Ocena",
+    "CATEGORY": "Kategorie",
+    "CATEGORY.NONE": "Brak",
+    "FAVORITE": "Ulubione",
+    "ACTORS": "Aktorzy",
+    "REVIEW": "Recenzje",
+    "RATINGS": "Oceny",
+    "ADDRATING": "Dodaj Ocene",
+    "ADDREVIEW": "Dodaj Recenzje"
+  },
+  "REVIEW": "Recenzja",
+  "RATING": {
+    "RATING": "Ocena",
+    "MUSIC": "Muzyka",
+    "VIEWS": "Widoki",
+    "ACTORS": "Gra Aktorska"
+  },
+  "MENU": {
+    "LOGIN": "Zaloguj",
+    "REGISTER": "Zarejestruj",
+    "ADDMOVIE": "Dodaj Film",
+    "LOGOUT": "Wyloguj"
+  },
+  "DESC": "opis",
+
+  "LANGUAGE": "jezyk",
+  "CANCEL": "Anuluj",
+  "SAVE": "Zapisz",
+  "EDIT": "Edytuj",
+  "REMOVE": "Usuń",
+  "NONE": "Brak",
+  "LIST": "Lista Filmow"
+}

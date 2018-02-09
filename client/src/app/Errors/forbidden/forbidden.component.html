@@ -1,0 +1,7 @@
+<mat-card>
+  <mat-toolbar color="warn">{{'ERRORS.FORBIDDEN'|translate}}</mat-toolbar>
+  <mat-card-actions fxLayout="row" fxLayoutAlign="space-around center">
+    <button mat-raised-button color="warn" (click)="sandbox.routerBack()">{{'ERRORS.BACK'|translate}}</button>
+    <button mat-raised-button color="warn" (click)="sandbox.routerGo({ path: [''] })">{{'ERRORS.HOME'|translate}}</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,20 @@
+mat-card {
+    margin: 5px 0;
+    height: 250px;
+}
+
+.mat-card {
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+}
+
+a {
+    display: flex;
+    flex: 1;
+}
+
+@import '~@angular/material/theming';
+mat-card:hover {
+    @include mat-elevation(8);
+}

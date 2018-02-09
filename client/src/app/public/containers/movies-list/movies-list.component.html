@@ -1,0 +1,8 @@
+<mat-paginator [length]="size" [pageSize]="pageSize" [pageSizeOptions]="[ 5, 10, 25, 100]" (page)="changePage.emit($event)">
+</mat-paginator>
+<div fxLayout="row wrap" fxLayoutGap.gt-xs="10px" fxLayoutAlign="start" *ngIf="pageSize>1">
+  <app-movie-preview *ngFor="let movie of list" [Movie]="movie" (like)="like.emit($event)" fxFlex.lt-sm="100" fxFlex.lt-md=" 0 0 calc(50% - 10px)"
+    fxFlex.lt-lg=" 0 0 calc(33% - 10px)" [logged]="userLogged" [isLiked]="isLiked(movie._id)" fxFlex.gt-md="0 0 calc(25% - 10px)">
+  </app-movie-preview>
+
+</div>

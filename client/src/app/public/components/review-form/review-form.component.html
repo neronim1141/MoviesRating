@@ -1,0 +1,23 @@
+<h1 mat-dialog-title>{{'RATING.RATING'|translate}}</h1>
+<div mat-dialog-content fxLayout="column">
+  <p> {{'RATING.RATING'|translate}}:{{data.rating}}</p>
+  <mat-slider [tick-interval]="auto" [thumb-label]="true" [step]="1" [max]="10" [min]="1" [(ngModel)]="data.rating"></mat-slider>
+  <p>{{'RATING.MUSIC'|translate}}:{{data.musicRating}}</p>
+
+  <mat-slider [tick-interval]="auto" [thumb-label]="true" [step]="1" [max]="10" [min]="1" [(ngModel)]="data.musicRating"></mat-slider>
+  <p>{{'RATING.VIEWS'|translate}}:{{data.viewRating}}</p>
+
+  <mat-slider [tick-interval]="auto" [thumb-label]="true" [step]="1" [max]="10" [min]="1" [(ngModel)]="data.viewRating"></mat-slider>
+  <p>{{'RATING.ACTORS'|translate}}:{{data.actorsRating}}</p>
+
+  <mat-slider [tick-interval]="auto" [thumb-label]="true" [step]="1" [max]="10" [min]="1" [(ngModel)]="data.actorsRating"></mat-slider>
+  <br />
+  <br />
+  <mat-form-field>
+    <textarea matInput placeholder="opis" [(ngModel)]="data.description"></textarea>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions fxLayoutAlign="space-around center">
+  <button mat-button (click)="onNoClick()">{{'CANCEL'|translate}}</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial [disabled]="!data.description">{{'SAVE'|translate}}</button>
+</div>
